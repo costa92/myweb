@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title><yang:sitetitle/></title>
+<meta name="keywords" content="<yang:sitekeywords />" />
+<meta name="description" content="<yang:sitedescription />" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/main.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/ez.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/rotate.js"></script>
+
+</head>
+<body>
+
+<!-- Layout 2 -->
+<div class="ez-mw wraper">
+	<div class="ez-wr header">
+		<div class="logo">
+			<h1>
+				<div class="avatars"><a href="http://www.longqiuhong.com" ><span>龙秋洪</span></a> </div>
+				<div class="texts">
+					<a href="<yang:siteurl />" title="<yang:sitename />" rel="home">
+					<yang:sitename />
+				</a>
+				</div>
+			</h1>
+			<p><yang:sitedescription /></p>
+		</div>        
+		<div class="top-ad"> </div>
+	</div>
+	<div class="ez-wr nav">
+		<ul class="nav-menu">
+			<li><a href="<yang:siteurl />">首 页</a></li>
+			<yang:navlist typeid='0'>
+			<li><a href='{$navlist.url}'>{$navlist.name}</a></li>
+			</yang:navlist>
+		</ul>
+	</div>
+		<div class="banner" id="Banner">
+			 <div class="left b_left">
+         		<div class="bd">
+					<ul>
+	                    <li><img  src="http://upload.fumatech.cn/2015/20/2015_20_79aa725b4713f66a198c6857a07229c7_32.jpg" width="480" height="300" alt="巴黎铁塔"></li>
+						<li><img  src="http://upload.fumatech.cn/2015/20/2015_20_f571ea88634237655b8f88b81040b24d_73.jpg" width="480" height="300" alt="终将逝去的青春"></li>
+						<li><img  src="http://upload.fumatech.cn/2015/20/2015_20_b423a36b4485bcf41b085585d05ae39f_80.jpg" width="480" height="300" alt="相机"></li>
+						<li><img  src="http://upload.fumatech.cn/2015/20/2015_20_5559cf940f87629c25a294814e78a788_98.jpg" width="480" height="300" alt="励志"></li>
+						<li><img  src="http://upload.fumatech.cn/2015/22/2015_22_774c967ceecd3d9fdf621838c2bf251e_97.jpg" width="480" height="300" alt="唯美耳机"></li>
+					</ul>
+				</div>
+				<div class="hd">
+					<div  class="hoverBg" ></div>
+					<ul>
+	                    <li><img  src="http://upload.fumatech.cn/2015/20/2015_20_79aa725b4713f66a198c6857a07229c7_32.jpg" width="100" height="40" alt="巴黎铁塔1"></li>
+						<li><img  src="http://upload.fumatech.cn/2015/20/2015_20_f571ea88634237655b8f88b81040b24d_73.jpg" width="100" height="40" alt="终将逝去的青春2"></li>
+						<li><img  src="http://upload.fumatech.cn/2015/20/2015_20_b423a36b4485bcf41b085585d05ae39f_80.jpg" width="100" height="40" alt="相机3"></li>
+						<li><img  src="http://upload.fumatech.cn/2015/20/2015_20_5559cf940f87629c25a294814e78a788_98.jpg" width="100" height="40" alt="励志4"></li>
+						<li><img  src="http://upload.fumatech.cn/2015/22/2015_22_774c967ceecd3d9fdf621838c2bf251e_97.jpg" width="100" height="50"alt="唯美耳机5"></li>
+					</ul>
+				</div>
+       		 </div>
+       		 <div class="left b_right">
+            	<div class="yiyu"><p>毕竟不是作家，写不出那么好的文章。--因为没有丰富阅历和经验！</p></div>
+       		 </div>
+		</div>
+
+    <!-- Module 2A -->
+	<div class="ez-wr marginT">
+		<div class="ez-fl ez-negmr ez-66">	
+			<yang:artlist pagesize='9'>
+			<div class="one-box">
+				<h2 class="one-box-title"><a href="{$artlist.url}">{$artlist.title}</a></h2>
+				<div class="post-meta">
+					<span class="meta-date">{$artlist.publishtime|date='Y年m月d日',###}</span>
+					<span class="meta-category">{$artlist.catename}</span>
+					<span class="meta-permalink"><a href="{$artlist.url}">永久链接</a></span>
+				</div>
+				<if condition="!empty($artlist['litpic'])">
+					<div class="thumbnail_box">
+						<div class="thumbnail">
+							<img style="opacity: 1;" original="" src="{$artlist.litpic}" alt="">
+						</div>
+					</div>
+				</if>
+				<div class="entry_post">
+				<span>&nbsp;{$artlist.description}</span></div>
+				<div class="clear"></div>
+			</div>
+			</yang:artlist>	
+			
+			<div class="pager clearfix">{$page}</div>
+		
+		</div>
+		<div class="ez-last ez-oh">
+		<div class="sidebar">          
+		<div class="sidebar-box clearfix">
+			<form method="post" id="searchbar" action="{:U('Search/index')}">
+				<input type="text" size="16" name="keyword" value="搜索" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;" id="search" />
+				<input type="submit" id="searchsubmit" value="" />
+			</form>
+		</div>
+		<div class="sidebar-box clearfix">
+			<h4>标签云</h4>	
+            <div id="rotate">
+	    		 <other:tab id='1'/>
+		    </div>
+		</div>
+		<div class="sidebar-box clearfix">
+			<h4>近期文章</h4>	
+			<ul>
+				<yang:artlist limit='5' titlelen='16'>
+				<li><a href="{$artlist.url}">{$artlist.title}</a></li>
+				</yang:artlist>
+			</ul>
+		</div>
+		<div class="sidebar-box clearfix">
+			<h4>文章归档</h4>
+			<ul>
+				<yang:datelist limit='100'>				
+				<li><a href='{$datelist.url}'>{$datelist.arc_year}年{$datelist.arc_month}[{$datelist.arc_num}]</a></li>
+				</yang:datelist>
+			</ul>
+		</div>
+
+		<div class="sidebar-box clearfix links">
+			<h4>友情连接</h4>	
+			<ul class="right">
+				<yang:flink limit='20'>
+				<li><a href="{$flink.url}" target="_blank">{$flink.name}</a></li>
+				</yang:flink>
+			</ul>
+		</div>
+		
+		<div class="sidebar-box clearfix">
+			<h4>访客留言</h4>
+			<ul>
+				<yang:gbooklist limit='10'>				
+				<li><span class="name">{$gbooklist.username}</span> <span class="time">({$gbooklist.posttime|date="Y-m-d H:i:s",###})</span>
+				<p>{$gbooklist.content}</p>
+				</li>
+				</yang:gbooklist>
+				<li style="text-align:right"><a href="<yang:gbookurl />">查看所有留言</a></li>
+			</ul>
+		</div>
+		
+		</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		jQuery(".b_left").slide({ mainCell:".bd ul", effect:"fold", autoPlay:true, delayTime:300, triggerTime:50, startFun:function(i){
+			jQuery(".b_left .hoverBg").animate({"margin-top":60*i},700);
+		}});
+	</script>
+	<include file="Public:footer" />
+</div>
+<script language="javascript" src="__PUBLIC__/js/MSClass.js"></script>
+</body>
+</html>
